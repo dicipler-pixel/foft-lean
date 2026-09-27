@@ -38,8 +38,8 @@ theorem baseline_selfComm (Λ : ℝ) (D : Matrix n n ℂ) :
   have ha : star (-(Λ : ℂ)) = -(Λ : ℂ) := by simp
   unfold selfComm
   rw [conjTranspose_add, conjTranspose_smul, conjTranspose_one, ha]
-  simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, one_mul, mul_one]
-  abel
+  simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, one_mul, mul_one, smul_smul]
+  module
 
 /-! ## Theorem 6.1: the regularised ledger -/
 
@@ -48,7 +48,7 @@ theorem heff_factor (Λ η : ℂ) (h : η ≠ Λ) (D : Matrix n n ℂ) :
     (-Λ) • (1 : Matrix n n ℂ) + D + η • 1 = (η - Λ) • (1 + (η - Λ)⁻¹ • D) := by
   have h' : η - Λ ≠ 0 := sub_ne_zero.mpr h
   rw [smul_add, smul_smul, mul_inv_cancel₀ h', one_smul, sub_smul]
-  abel
+  module
 
 /-- **Theorem 6.1, the missing `k = 1` term.** A traceless perturbation gives `Tr X = 0`. -/
 theorem trace_X_zero (Λ η : ℂ) (D : Matrix n n ℂ) (hD : trace D = 0) :
@@ -138,9 +138,8 @@ rescaled by `c²`. -/
 theorem flow_smul (c : ℝ) (K : Matrix n n ℂ) :
     flow ((c : ℂ) • K) = ((c ^ 3 : ℝ) : ℂ) • flow K := by
   unfold flow
-  rw [selfComm_smul, smul_mul_smul_comm, smul_mul_smul_comm, ← smul_sub, smul_comm]
-  congr 1
+  rw [selfComm_smul, smul_mul_smul_comm, smul_mul_smul_comm]
   push_cast
-  ring
+  module
 
 end FOFT
