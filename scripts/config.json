@@ -1,0 +1,1 @@
+{"modules":[{"module":"FOFT.Basic","path":"FOFT/Basic.lean"}],"expected_theorems":11,"expected_false_controls":3,"root_imports":["FOFT.Basic"]}
