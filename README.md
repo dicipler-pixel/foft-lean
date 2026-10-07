@@ -30,8 +30,8 @@ exact rate.
 | Theorem 4.1 | `K₀ = −Λ I` commutes with every operator; `[K₀ + ΔK, (K₀ + ΔK)†] = [ΔK, ΔK†]` | `baseline_commutes`, `baseline_selfComm` |
 | Theorem 6.1 | `K + η I = (η − Λ)(I + X)` with `X = ΔK/(η − Λ)`, and `Tr X = 0` for traceless `ΔK` | `heff_factor`, `trace_X_zero` |
 | Theorem 6.2 | If `σ² = 1` and `σY = −Yσ`, then `Tr Y^k = 0` and `Tr (iY)^k = 0` for odd `k`; each chiral pair gives `log(1 + iλ) + log(1 − iλ) = log(1 + λ²)` | `odd_moment_zero`, `odd_moment_zero_X`, `chiral_pair` |
-| Theorem 8.2 | `Tr(K†[C, K]) = Tr C²`: the Henrici budget dissipates at exactly `−8Φ` | `henrici_rate` |
-| Prop. 8.4 | `Tr(K†[C, K†]) = 0`: the dual flow conserves `‖K‖²_F` | `dual_flow_conserves` |
+| Theorem 8.2 | `Tr(K†[C, K]) = Tr C²`, the identity behind `d‖K‖²_F/dt = −4 Tr C²` (the paper's Henrici dissipation rate `−8Φ`) along `K̇ = −2[C, K]`; the time derivative is not formalized | `henrici_rate` |
+| Prop. 8.4 | `Tr(K†[C, K†]) = 0`, the identity behind conservation of `‖K‖²_F` along the dual flow `K̇ = −2[C, K†]`; the time derivative is not formalized | `dual_flow_conserves` |
 | Sec. 8 | `[cK, (cK)†] = c²[K, K†]` and the flow field satisfies `F(cK) = c³ F(K)` | `selfComm_smul`, `flow_smul` |
 
 The file is [`FOFT/Basic.lean`](FOFT/Basic.lean). What is not proved is in
